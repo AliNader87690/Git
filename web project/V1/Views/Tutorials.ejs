@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>Tutorials</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=stylesheet type="text/css" href="/css/style.css">
+    <link rel=stylesheet type="text/css" href="/css/grid.css">
+</head>
+
+<body>
+    <header>
+        <%- include("header.ejs")%>
+    </header>
+    <nav>
+        <div id="nav">
+            <%- include("nav.ejs")%>
+        </div>
+    </nav>
+    <main>
+        <section title="Tutorials" id="s">
+            <% for(let tut of tlist) {%>
+                <article title="<%=tut.name %>">
+                 <h4><a href="Tutorial?name=<%=tut.name %>"><em><%=tut.name %></em></a></h4>
+                 <time datetime="<%=tut.datum%>">Datum: <%=tut.datum %></time><br>
+                 <figure class="tutorialsImg">
+                      <img src= <%=tut.bild.url %> height="150" width="200" alt="<%=tut.bild.name%>"/>
+                      <figcaption><%=tut.bild.name %></figcaption>
+                 </figure>
+                 Dauer: <%=get(tut.dauer)%><br>
+                 Beschreibung: <%=tut.beschreibung%>
+                </article>
+                <%}%>
+        </section>
+    </main>
+    <aside>
+        <%- include("aside.ejs")%> 
+    </aside>
+    <footer>
+        <%- include("footer.ejs")%>
+    </footer>
+    <script src="Java-Script/Menu.js"></script>
+</body>
+
+</html>

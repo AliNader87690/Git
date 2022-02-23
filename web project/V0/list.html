@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <title>Liste</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=stylesheet type="text/css" href="assest/css/style.css">
+    <link rel=stylesheet type="text/css" href="assest/css/flexbox.css">
+    <link rel=stylesheet type="text/css" href="assest/css/tiles.css">
+
+</head>
+
+<body>
+    <header>
+        <img src="assest/Bilder/fa2dd0082f184fc4a556b6d21c2dec75.jpg" alt="Logo (50%)" height="50" width="100">
+        <h1>Your Way to get better</h1>
+    </header>
+
+    <nav>
+        <div id="nav">
+            <Strong><a href="">Liste der Kategorien</a></Strong>
+            <strong>|<a href="tutorials.html#css">Css Tutorial</a></strong>
+            <strong>|<a href="tutorial.html">Details zum Html Tutorial</a></strong>
+        </div>
+    </nav>
+    <div id="haupt">
+    <main id="mainlist">
+        <fieldset>
+            <legend>Suche</legend>
+        <form action="http://localhost:8844/" method="get">
+        <label for="search">Search:</label>
+        <input type="text" minlength="4" maxlength="20" required placeholder="z.b. Html-grundlagen01" name="search" id=search pattern="[A-Z].*">
+         <button name=senden>Suchen!</button>
+        </form>
+        </fieldset>
+        <section title="Kategorie Liste" id="liste">
+            <h4>Kategorie Liste :</h4>
+            <div id="container">
+                <a class="kachel" href="tutorials.html#html">
+                    <p><strong>Web-Entwicklung</strong></p>
+                    <img class="bild" src="assest/Bilder/Webentwicklung.png"
+                        alt="Web-Entwicklung" height="200" width="200" />
+                </a>
+                <a class="kachel" href="tutorials.html">
+                    <p><strong>C++/C#</strong></p>
+                    <img class="bild" src="assest/Bilder/ds.png" alt="C++/C#"
+                        height="200" width="200">
+                </a>
+                <a class="kachel" href="tutorials.html">
+                    <p><strong>App_Design</strong></p>
+                    <img class="bild"
+                        src="assest/Bilder/Ultimate-guide-to-app-design-2.jpg"
+                        alt="App-Design" height="200" width="200" />
+                </a>
+                <a class="kachel" href="tutorials.html">
+                    <p><strong>Java-Script</strong></p>
+                    <img class="bild"
+                        src="assest/Bilder/masasxresdefault.jpg"
+                        alt="Java-Script" height="200" width="200" />
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <aside>
+        <dl>
+            <dt><strong>Neue Tutorials</strong></dt>
+            <dd>
+                <ul>
+                    <li>HTML ,Einstieg .Dauer: 2 Std 30 Min .Datum: <time datetime="2021-10-15">15-10-2021</time></li>
+                    <li>JAVA ,Grundkurs .Dauer: 2 Std 45 Min .Datum: <time datetime="2021-09-15">15-09-2021</time></li>
+                </ul>
+            </dd>
+        </dl>
+    </aside>
+    </div>
+    <footer>
+        <hr>
+        <small>&copy;2021 MMA-Team</small>
+    </footer>
+    <script src="assest/Java-Script/Menu.js"></script>
+</body>
+
+</html>

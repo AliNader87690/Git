@@ -1,0 +1,165 @@
+﻿/*Moamen Alkatib Matrikelnummer:7206217 
+Ali Nader Matrikelnummer: 7208457
+Anwendungskontext: Gasversorgung.
+*/
+
+
+-- Table Structure for Table Firma
+Drop Table Firma CASCADE CONSTRAINTS;
+CREATE TABLE Firma (
+    Firmaid     INT PRIMARY KEY,
+    Firmaname   VARCHAR(45) NOT NULL,
+    ort     VARCHAR(45),
+    telefonnummer Varchar(12) NOT NULL unique,
+    Emailadresse  Varchar(45) unique
+);
+
+---- Table Structure for Table Verbruahcer
+Drop Table Verbraucher CASCADE CONSTRAINTS;
+CREATE TABLE Verbraucher (
+    Verbraucherid   INT PRIMARY KEY,
+    Anrede          CHARACTER(4) CHECK ( anrede IN (
+        'Herr',
+        'Frau',
+        NULL
+    ) ),
+    Vorname         varchar(45) NOT NULL,
+    Nachname        varchar(45) NOT NULL,
+    Geburtsdatum    DATE,
+    Telefonnummer   varchar(12) NOT NULL UNIQUE
+);
+
+---- Table Structure for Table Tarif
+Drop Table Tarif CASCADE CONSTRAINTS;
+CREATE TABLE Tarif (
+    Tarifid            INT PRIMARY KEY,
+    Typ                VARCHAR(60) NOT NULL,
+    Arbeitspreis       NUMERIC(4,2) NOT NULL,
+    Laufzeit           NUMBER NOT NULL,
+    Verlaengerung      NUMBER NOT NULL,
+    Kuendigungsfrist   NUMBER NOT NULL,
+    Preisgarantie      NUMBER,
+    Abschlagzahlung    VARCHAR(45) NOT NULL,
+    Neukundebonus      VARCHAR(45),
+    Parentid           NUMBER,
+    FOREIGN KEY ( Parentid )
+        REFERENCES tarif ( Tarifid ),
+    CONSTRAINT pruefe CHECK ( Arbeitspreis > 0 ),
+    CHECK ( Laufzeit > 0 ),
+    CHECK ( Kuendigungsfrist > 0 )
+);
+
+
+---- Table Structure for Table Adresse
+Drop Table Adresse CASCADE CONSTRAINTS;
+Create Table Adresse(
+Aid Int primary key,
+Stadt varchar(45) not Null,
+PLZ INT not null check (PLZ between 0 and 99999),
+Strasse varchar(45) not null,
+Hausnummer int not null check(Hausnummer >0)
+);
+
+
+---- Table Structure for Table Anbieter
+Drop Table Anbieter CASCADE CONSTRAINTS;
+CREATE TABLE Anbieter (
+    Anbieterid INT,
+    Firmaid   INT,
+    Tarifid   INT,
+    PRIMARY KEY (Anbieterid),
+    FOREIGN KEY ( Firmaid )
+        REFERENCES Firma ( Firmaid ),
+    FOREIGN KEY ( Tarifid )
+        REFERENCES Tarif ( Tarifid )
+);
+
+
+---- Table Structure for Table Buchung
+Drop Table Buchung CASCADE CONSTRAINTS;
+CREATE TABLE Buchung (
+    Buchungid       INT,
+    Verbraucherid   INT,
+    Anbieterid      INT,
+    FOREIGN KEY (Verbraucherid) REFERENCES Verbraucher(verbraucherid),
+    FOREIGN KEY ( Anbieterid )  REFERENCES Anbieter ( Anbieterid ),
+    PRIMARY KEY ( Buchungid )
+);
+
+
+---- Table Structure for Table Zaehler
+Drop Table Zaehler CASCADE CONSTRAINTS;
+CREATE TABLE Zaehler (
+    Zaehlerid           INT PRIMARY KEY,
+    Herstellungsdatum   DATE,
+    Zustand             NUMERIC(9, 3) NOT NULL,
+    Wohnflaeche         NUMBER NOT NULL check(Wohnflaeche > 0),
+    Buchungid           INT,
+    Aid                 INT,
+    FOREIGN KEY (Aid)
+        REFERENCES Adresse(Aid),
+    FOREIGN KEY ( Buchungid )
+        REFERENCES Buchung ( Buchungid )
+);
+
+
+-- Dumping data for table Firma
+Insert Into firma VALUES(1,'Stadtwerke','Dortmund','02383273701','Stadtwerke@menden.de');
+Insert into firma VALUES(2,'DEW21','Dortmund','01837031631','DEW21@dortmund.de');
+insert into firma VALUES(3,'Yellow',Null,'01310264737','Yellow@dortmund.de');
+insert into firma VALUES(4,'red',null,'01309844823','red@dortmund.de');
+
+
+-- Dumping data for table Tarif
+insert into tarif VALUES(0,'privat',0.75,24,12,3,12,'monatlich','20$ einmalig',null);
+insert into tarif VALUES(1,'Spar',0.65,24,12,3,null,'monatlich',null,null);
+insert into tarif VALUES(2,'Geschäft',1,24,24,3,24,'jährlich',null,null);
+insert into tarif VALUES(3,'Spezial privat',0.73,24,12,3,6,'monatlich','10$ einmalig',0);
+insert into tarif VALUES(4,'spezail Spar',0.6,24,12,3,12,'monatlich','20$ einmalig',1);
+
+
+-- Dumping data for table Verbruaucher
+insert into verbraucher VALUES(1,'Herr','roxi','Walter','20.07.1995','01776221795');
+insert into verbraucher VALUES(2,'Frau','Herta','Mueller','22.09.1991','017591238123');
+insert into verbraucher VALUES(3,'Herr','Hubert','Humbug','01.02.2000','018374628823');
+insert into verbraucher VALUES(4,'Herr','Pueppi','Lawless','03.01.2002','018374627123');
+insert into verbraucher VALUES(5,null,'FH','Dortmund',null,'01768273612');
+
+
+-- Dumping data for table Adresse
+insert into Adresse Values(1,'Dortmund',44092,'Sonnenstr',99);
+insert into Adresse Values(2,'Dortmund',44022,'Hansastr',2);
+insert into Adresse Values(3,'Hagen',30912,'Gartenstr',5);
+insert into Adresse Values(4,'Menden',57806,'Gollacksplatz',12);
+
+-- Dumping data for table Anbieter
+insert into anbieter VALUES(0,1,0);
+insert into anbieter VALUES(1,1,1);
+insert into anbieter VALUES(2,1,2);
+insert into anbieter VALUES(3,1,3);
+insert into anbieter VALUES(4,1,4);
+insert into anbieter VALUES(5,2,0);
+insert into anbieter VALUES(6,2,1);
+insert into anbieter VALUES(7,2,2);
+insert into anbieter VALUES(8,3,0);
+insert into anbieter VALUES(9,3,1);
+
+
+-- Dumping data for table Buchung
+insert into Buchung VALUES(0,1,8);
+insert into Buchung VALUES(1,2,0);
+insert into Buchung VALUES(2,2,9);
+insert into Buchung VALUES(3,3,3);
+insert into Buchung VALUES(4,4,4);
+insert into Buchung VALUES(5,5,2);
+
+
+-- Dumping data for table Zaehler
+insert into zaehler VALUES(1,'01.11.1997',10000.200,50,0,2);
+insert into zaehler VALUES(2,'01.11.1997',9000.212,40,1,2);
+insert into zaehler VALUES(3,'11.02.2004',5000.101,60,2,3);
+insert into zaehler VALUES(4,'11.02.2004',0,300,5,1);
+insert into zaehler VALUES(5,'11.02.2004',1000,50,3,3);
+
+commit;
+

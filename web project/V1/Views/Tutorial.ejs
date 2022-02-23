@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tutorial</title>
+    <link rel=stylesheet type="text/css" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=stylesheet type="text/css" href="/css/flexbox.css">
+</head>
+
+<body>
+        <header>
+            <%- include("header.ejs")%>
+        </header>
+        <nav>
+            <div id="nav">
+                <%- include("nav.ejs")%>
+            </div>
+        </nav>
+        <div id=mainundaside>
+        <main id="main">
+            <article id=hauptinhalt title="<%= tut.name %>">
+                <div id="bildundinfos">
+                    <figure id="tutorial-bild1">
+                        <img src="<%= tut.bild.url%>" height="150" width="200"
+                            alt="<%= tut.bild.name%>">
+                        <figcaption>Abbildung:<%= tut.bild.name%></figcaption>
+                    </figure>
+                    <div id=Informationenzumtutorial>
+                        <h4><em><%= tut.name %></em></h4>
+                        <time datetime="<%= tut.datum %>">Datum: <%= tut.datum %></time><br>
+                        <p>
+                            Dauer: <%= getdauer(tut.dauer)%> <br>
+                            Beschreibung: <%= tut.beschreibung%>
+                        </p>
+                    </div>
+                </div>
+                <div id=Tvideo">
+                    <% if(tut.url) {%>
+                    <p >Text-Tutorial</p>
+                    <p><a href="<%= tut.url%>"><%= tut.url%></a></p>
+                    <%} else{%>
+                    <p >Video-Tutorial</p>
+                    <iframe width="420" height="315"
+                     src="https://www.youtube.com/embed/<%=tut.embedcode%>">
+                    </iframe>             
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name des Kapitels</th>
+                                <th>Kurzbeschreibung des Kapitelinhalts</th>
+                                <th>Dauer in Min</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(let kap of tut.kapitallist) {%>
+                                <tr>
+                                    <td><%= kap.name%></td>
+                                    <td><%= kap.beschreibung%></td>
+                                    <td><%= getdauer(kap.dauer)%></td>
+                                </tr>
+                                <%}%>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Gesamt_Dauer</th>
+                                <td></td>
+                                <td><%= getdauer(tut.dauer)%></td>
+                            </tr>
+
+                        </tfoot>
+                    </table>
+                    <%}%>
+                </div>
+            </article>
+        </main>
+        <aside>
+            <%- include("aside.ejs")%> 
+        </aside>
+    </div>
+    <footer>
+        <%- include("footer.ejs")%>
+    </footer>
+    <script src="/Java-Script/Menu.js"></script>
+</body>
+
+</html>

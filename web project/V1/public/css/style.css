@@ -1,0 +1,139 @@
+
+h1 {
+    font-size: xx-large;
+    font-family: cursive;
+    text-transform: uppercase;
+    text-shadow: 3px 2px 2px navajowhite
+}
+ aside dl ul li {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-color: aqua;
+} 
+
+dt {
+    background-color: aquamarine;
+}
+nav div  strong a:hover{
+ color: violet;
+}
+
+table,
+thead,
+tbody,
+tr,
+th,
+td {
+    border: 2px solid black;
+}
+
+thead, tfoot {
+    background-color: chartreuse;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: aqua;
+}
+* {
+    font-family: Helvetica, Arial;
+}
+
+
+ /* form */
+input:invalid{
+    border-bottom: 1px solid red;
+}
+input:valid{
+    border-bottom: 1px solid black;
+}
+.req::after{
+    content: " (Erforderliches Feld)";
+    font-size: x-small;
+}
+legend{
+    border: solid black;
+    border-radius: 5px;
+     border-left: 0px;
+    border-right: 0px;
+    background-color: rgb(206, 168, 168);
+    color: white;
+}
+.abstand{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+input{
+    border-top: 0px;
+    border-right: 0px;
+}
+select{
+    border-radius: 5px;
+    background-color: rgb(211, 205, 205);
+}
+fieldset {
+    border-bottom: 0px ;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; 
+    justify-content: center;
+    font-size: larger;
+    font-family: cursive;
+}
+.tutorialsImg{
+    float: left;
+}
+#tutorial-bild1{
+    float: right;
+}
+label input{
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#s{
+    display: flex;
+    flex-direction: column;
+}
+nav {
+    display: flex; 
+    background-color: blanchedalmond;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 10px 10px 4px gray;
+    flex-direction: row; 
+}
+nav div strong{
+    display: inline-block;
+     margin-right: 10px; 
+     margin-left: 10px;
+    flex: 1 1 auto
+}
+footer {
+    position: fixed;
+    bottom: 0px;
+   }
+   h1 {
+    padding: 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+time {
+    display: block;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+}
+aside {
+    display: flex;
+    flex-direction: column;
+    margin: 35px;
+    padding: 15px;
+    border: 2px solid steelblue;
+    background-color: burlywood;
+}

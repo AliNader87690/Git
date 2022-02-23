@@ -1,0 +1,82 @@
+#mainlist {
+    display: flex;
+    flex-direction: column;
+    flex: 2 1 80%;
+
+}
+ aside{
+    flex: 0 1 20%;
+} 
+#haupt{
+    display:flex;
+    flex-direction: row;
+}
+
+body  {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#bildundinfos{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+
+#hauptinhalt {
+    display:flex;
+    flex-direction: column;
+
+}
+#mainundaside{
+    display: flex;
+}
+
+
+#main{
+    flex-grow: 1;
+}
+/*listflex*/
+#logo {
+    max-width: 100%;
+    height: auto;
+}
+@media screen and (max-width:768px){
+    #haupt {
+        flex-direction: column;
+    }
+    header h1{
+        font-size: smaller;
+       }
+}
+
+
+
+@media screen and (max-width:480px){
+    header h1{
+        display: none;
+       }
+       nav {
+        flex-wrap: wrap; 
+       }
+}
+
+/* tutorialflex */
+@media screen and (max-width:768px){
+    #mainundaside{
+        flex-direction: column;
+    }
+    header h1{
+        font-size: smaller;
+       }
+}
+@media screen and (max-width:480px){
+    header h1{
+        display: none;
+       }
+       nav {
+        flex-wrap: wrap; 
+       }
+}

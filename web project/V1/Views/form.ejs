@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tutorial hinzufügen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=stylesheet type="text/css" href="/css/style.css">
+    <link rel=stylesheet type="text/css" href="/css/grid.css">
+    <link rel=stylesheet type="text/css" href="/css/nav.css">
+</head>
+
+<body>
+    <header>
+        <%- include("header.ejs")%>
+    </header>
+    <nav>
+        <div id="nav">
+            <%- include("nav.ejs")%>
+        </div>
+    </nav>
+    <main>
+        <form action="http://localhost:8020" method="post">
+            <fieldset>
+            <legend class="abstand">TutorialInformationen</legend>
+            <label class="req">Tutorialname:
+                <input type="text" required name="name" minlength="4" maxlength="20" pattern="[A-Z]+[a-zA-Z0-9]*">
+            </label> <br>
+            <p class="abstand req">
+                Wählen Sie:
+                <select name="language">
+                    <option value="none" selected>-</option>
+                    <option value="de">Deutsch</option>
+                    <option value="en">Englisch</option>
+                    <option value="fr">Französisch</option>
+                    <option value="es">Spanisch</option>
+                </select>
+            </p>
+            <label class="req">Autorln(nen)
+                <input type="text" name="author" required pattern="([A-Z][a-z1-9]+)([,][A-Z][a-z1-9]+)*">
+            </label> <br>
+            <label class="req"> Kategorie
+                <input type="text" required name="categories" pattern="(.*)*(.*[^,])">
+            </label> <br>
+            <label for="des">Beschreibung: </label>
+            <textarea name="description" id="des" required minlength="40" cols="14" rows="10"></textarea> <br>
+            </fieldset>
+            <fieldset>
+                <legend class="abstand">Zeitliche Rahmenbedingungen</legend>
+            <label id="timelabel" class="req">Dauer
+                <input id="time" type="time" name="duration" required min="00:20" max="16:00">
+            </label> <br>
+            <label class="req">Veröffentlichung(Datum)
+                <input type="date" name="date" required>
+            </fieldset>
+            </label> <br>
+            <fieldset id="inhalt">
+                <legend>Inhalt</legend>
+                <input id="text"  type="radio" name="type" value="text">
+                <label class="req">Text-Tutorial</label><br>
+                <input id="video" type="radio" name="type" value="video">
+                <label class="req">Video-Tutorial</label><br>
+            </fieldset>
+            <input id="submit" type="submit">
+        </form>
+
+    </main>
+    <aside>
+        <%- include("aside.ejs")%>
+    </aside>
+    <footer>
+        <%- include("footer.ejs")%>
+    </footer>
+    <script src="/Java-Script/form.js"></script>
+    <script src="/Java-Script/Menue.js"></script>
+</body>
+
+</html>

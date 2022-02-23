@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <title>Liste</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=stylesheet type="text/css" href="/css/style.css">
+    <link rel=stylesheet type="text/css" href="/css/flexbox.css">
+    <link rel=stylesheet type="text/css" href="/css/tiles.css">
+
+</head>
+
+<body>
+    <header>
+        <%- include("header.ejs")%>
+    </header>
+
+    <nav>
+        <div id="nav">
+          <%- include("nav.ejs")%>
+        </div>
+    </nav>
+    <div id="haupt">
+    <main id="mainlist">
+        <fieldset>
+            <legend>Suche</legend>
+        <form action="http://localhost:8844/" method="get">
+        <label for="search">Search:</label>
+        <input type="text" minlength="4" maxlength="20" required placeholder="z.b. Html-grundlagen01" name="search" id=search pattern="[A-Z].*">
+         <button name=senden>Suchen!</button>
+        </fieldset>
+        <section title="Kategorie Liste" id="liste">
+            <h4>Kategorie Liste :</h4>
+            <div id="container">
+                <% for(let kat of data.kategorien){%>
+                <a class="kachel" href="Tutorials?category=<%=kat.name%>">
+                <p><strong><%= kat.name%></strong></p>
+                <img class="bild" src= <%= kat.bild.url%> alt= "<%= kat.name%>" 
+                  height="200" width="200" />
+                </a>
+                <%}%>
+            </div>
+        </section>
+    </main>
+
+    <aside>
+      <%- include("aside.ejs")%> 
+    </aside>
+    </div>
+    <footer>
+       <%- include("footer.ejs")%>
+    </footer>
+    <script src="/Java-Script/Menu.js"></script>
+</body>
+
+</html>

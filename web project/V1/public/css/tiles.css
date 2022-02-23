@@ -1,0 +1,23 @@
+.kachel {
+    border: 2px solid wheat;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 10px 10px 4px gray;
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+}
+#container {
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.bild {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,45 @@
+header {
+    grid-area: kopf;
+}
+nav {
+    grid-area: navibereich;
+}
+main {
+    grid-area: hauptinhalt;
+}
+aside {
+    grid-area: zusatz;
+}
+footer {
+    grid-area: fuss;
+}
+body {
+    display: grid;
+    grid-template-areas: "kopf kopf"
+                         "navibereich navibereich"
+                          "hauptinhalt zusatz"
+                          "fuss fuss";
+    grid-template-columns: auto 20%;
+}
+@media screen and (max-width:768px){
+    body {
+        grid-template-areas: "kopf"
+                             "navibereich"
+                              "hauptinhalt"
+                              "zusatz"
+                              "fuss";
+        grid-template-columns: auto ;
+    }
+    header h1{
+     font-size: smaller;
+    }
+}
+
+@media screen and (max-width:480px){
+    header h1{
+        display: none;
+       }
+       nav {
+        flex-wrap: wrap; 
+       }
+}
