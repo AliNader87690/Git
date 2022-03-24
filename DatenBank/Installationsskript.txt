@@ -1,7 +1,6 @@
-﻿/*Moamen Alkatib Matrikelnummer:7206217 
-Ali Nader Matrikelnummer: 7208457
+﻿
 Anwendungskontext: Gasversorgung.
-*/
+
 
 
 -- Table Structure for Table Firma
