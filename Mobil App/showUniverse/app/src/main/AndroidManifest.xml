@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.showuniverse">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:usesCleartextTraffic="true"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ShowUniverse"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".controller.AddMediumToWatchlistActivity"
+            android:parentActivityName=".controller.MediumInformationenActivity"
+            android:label="Mediuminformationen"
+            android:exported="false" />
+        <activity
+            android:name=".controller.MediumInformationenActivity"
+            android:parentActivityName=".controller.MainActivity"
+            android:label="Home"
+            android:exported="false" />
+        <activity
+            android:name=".controller.ProfilBearbeitenActivity"
+            android:parentActivityName=".controller.ProfilActivity"
+            android:label="Profil"
+            android:exported="false" />
+        <activity
+            android:name=".controller.WatchlisteBearbeitenActivity"
+            android:parentActivityName=".controller.MeineWatchlistenActivity"
+            android:label="Meine Watchlisten"
+            android:exported="false" />
+        <activity
+            android:name=".controller.NeueWatchlistErstellenActivity"
+            android:parentActivityName=".controller.MeineWatchlistenActivity"
+            android:label="Meine Watchlisten"
+            android:exported="false" />
+        <activity
+            android:name=".controller.ProfilActivity"
+            android:parentActivityName=".controller.MainActivity"
+            android:label="Home"
+            android:exported="false" />
+        <activity
+            android:name=".controller.RegistrierungActivity"
+            android:parentActivityName=".controller.MainActivity"
+            android:label="Home"
+            android:exported="false" />
+        <activity
+            android:name=".controller.LoginActivity"
+            android:parentActivityName=".controller.MainActivity"
+            android:label="Home"
+            android:exported="false" />
+        <activity
+            android:name=".controller.EineWatchlistActivity"
+            android:parentActivityName=".controller.MeineWatchlistenActivity"
+            android:label="Meine Watchlisten"
+            android:exported="false" />
+        <activity
+            android:name=".controller.MeineWatchlistenActivity"
+            android:parentActivityName=".controller.MainActivity"
+            android:label="Home"
+            android:exported="false" />
+        <activity
+            android:name=".controller.SucheActivity"
+            android:parentActivityName=".controller.MainActivity"
+            android:label="Home"
+            android:exported="false" />
+        <activity
+            android:name=".controller.MedienUebersichtActivity"
+            android:parentActivityName=".controller.MainActivity"
+            android:label="Home"
+            android:exported="false" />
+        <activity
+            android:name=".controller.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

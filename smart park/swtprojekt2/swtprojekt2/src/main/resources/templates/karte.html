@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style1.css" th:href="@{/css/style1.css}"  type="text/css">
+    <title>Aktion</title>
+</head>
+<body>
+<div class="Maincontainer">
+    <div id="topBody">
+        <div class="table">
+            <div class="tr">
+                <div class="td">
+                    <!-- FH-Logo -->
+                    <div id="logo"><a  target="_blank" href="https://www.fh-dortmund.de"><img src="../static/Img/fh-logo_sc.gif" th:src="@{/Img/fh-logo_sc.gif}" width="155" height="60" alt="Fachhochschule Dortmund&#13;University of Applied Sciences" border="0" galleryimg="no"/></a></div>
+                    <div id="focusOnStudents"><img src="../static/Img/weFocusOnStudents.gif" th:src="@{/Img/weFocusOnStudents.gif}" width="170" height="20" alt="we focus on students" border="0" galleryimg="no"/></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <header>
+        <h1>FH-2D-Park</h1>
+        <a th:href="@{/home}" class="btn" id="abmelden"><p>abmelden</p></a>
+    </header>
+<div id="main">
+<div id="garage">
+    <div id="oben">
+        <div class="parkplaz box" ><img src="../static/Img/notausgangred.png" th:src="@{/Img/notausgangred.png}" id="not1"></div>
+        <div class="parkplaz box" ><img src="../static/Img/car.png" th:src="@{/Img/Park.png}" id="p1"></div>
+        <div class="parkplaz box" ><img src="../static/Img/car.png" th:src="@{/Img/Park.png}" id="p2"></div>
+        <div class="parkplaz box" ><img src="../static/Img/car.png" th:src="@{/Img/Park.png}" id="p3"></div>
+        <div class="parkplaz box" ><img src="../static/Img/notazsganggreen.png" th:src="@{/Img/notazsganggreen.png}" id="not2"></div>
+    </div>
+    <div class="road">
+        <img src="../static/Img/road.jpg" th:src="@{/Img/road.jpg}">
+        <img src="../static/Img/road.jpg" th:src="@{/Img/road.jpg}">
+        <img src="../static/Img/road.jpg" th:src="@{/Img/road.jpg}">
+        <img src="../static/Img/road.jpg" th:src="@{/Img/road.jpg}">
+        <img src="../static/Img/road.jpg" th:src="@{/Img/road.jpg}">
+        <img src="../static/Img/road.jpg" th:src="@{/Img/road.jpg}">
+    </div>
+    <div id="s2">
+        <div class="parkplaz box" ><img src="../static/Img/car.png" th:src="@{/Img/Park.png}" id="p4"></div>
+        <div class="parkplaz box" ><img src="../static/Img/car.png" th:src="@{/Img/Park.png}" id="p5"></div>
+        <div class="parkplaz box" ><img src="../static/Img/car.png" th:src="@{/Img/Park.png}" id="p6"></div>
+        <div class="parkplaz box" ><img src="../static/Img/car.png" th:src="@{/Img/Park.png}" id="p7"></div>
+        <div class="parkplaz box" ><img src="../static/Img/schrankeauf.png" th:src="@{/Img/schrankeauf.png}" id="schranke"></div>
+    </div>
+    <div class="road">
+        <img src="../static/Img/road.jpg" th:src="@{/Img/road.jpg}">
+        <img src="../static/Img/road.jpg" th:src="@{/Img/road.jpg}">
+        <img src="../static/Img/road.jpg" th:src="@{/Img/road.jpg}">
+        <img src="../static/Img/road.jpg" th:src="@{/Img/road.jpg}">
+        <img src="../static/Img/road.jpg" th:src="@{/Img/road.jpg}">
+        <img src="../static/Img/road.jpg" th:src="@{/Img/road.jpg}">
+    </div>
+    <div id="s3">
+        <div class="parkplaz box" ><img src="../static/Img/notazsganggreen.png" th:src="@{/Img/notazsganggreen.png}" id="not3"></div>
+        <div class="parkplaz box" ><img src="../static/Img/car.png" th:src="@{/Img/Park.png}"  id="p8"></div>
+        <div class="parkplaz box" ><img src="../static/Img/car.png" th:src="@{/Img/Park.png}"  id="p9"></div>
+        <div class="parkplaz box" ><img src="../static/Img/car.png" th:src="@{/Img/Park.png}"  id="p10"></div>
+        <div class="parkplaz box"  ><img src="../static/Img/notazsganggreen.png" th:src="@{/Img/notazsganggreen.png}" id="not4"></div>
+    </div>
+</div>
+</div>
+    <div id="buttoncontainer">
+        <a th:if="${geschlossen==true}" th:href="@{/tueroefnnen}" class="btn button" id="oeffnen" style="background-color: green">Tür Öffnen</a>
+        <a th:unless="${geschlossen==true}" th:href="@{/tuerschliessen}" class="btn button" id="schliessen" style="background-color: red">Tür Schließen</a>
+    </div>
+</body>
+<script>
+    if([[${geschlossen}]]==true){
+        document.getElementById("schranke").setAttribute("src","[[@{/Img/schrankerunter.png}]]");
+    }else{
+        document.getElementById("schranke").setAttribute("src","[[@{/Img/schrankeauf.png}]]");
+    }
+
+    if([[${belegt1}]]==true){
+        document.getElementById("p1").setAttribute("src","[[@{/Img/car.png}]]");
+    }else{
+        document.getElementById("p1").setAttribute("src","[[@{/Img/Park.png}]]");
+    }
+
+    if([[${belegt2}]]==true){
+        document.getElementById("p2").setAttribute("src","[[@{/Img/car.png}]]");
+    }else{
+        document.getElementById("p2").setAttribute("src","[[@{/Img/Park.png}]]");
+    }
+
+    if([[${belegt3}]]==true){
+        document.getElementById("p3").setAttribute("src","[[@{/Img/car.png}]]");
+    }else{
+        document.getElementById("p3").setAttribute("src","[[@{/Img/Park.png}]]");
+    }
+
+    if([[${belegt4}]]==true){
+        document.getElementById("p4").setAttribute("src","[[@{/Img/car.png}]]");
+    }else{
+        document.getElementById("p4").setAttribute("src","[[@{/Img/Park.png}]]");
+    }
+
+    if([[${belegt5}]]==true){
+        document.getElementById("p5").setAttribute("src","[[@{/Img/car.png}]]");
+    }else{
+        document.getElementById("p5").setAttribute("src","[[@{/Img/Park.png}]]");
+    }
+
+    if([[${belegt6}]]==true){
+        document.getElementById("p6").setAttribute("src","[[@{/Img/car.png}]]");
+    }else{
+        document.getElementById("p6").setAttribute("src","[[@{/Img/Park.png}]]");
+    }
+
+    if([[${belegt7}]]==true){
+        document.getElementById("p7").setAttribute("src","[[@{/Img/car.png}]]");
+    }else{
+        document.getElementById("p7").setAttribute("src","[[@{/Img/Park.png}]]");
+    }
+
+    if([[${belegt8}]]==true){
+        document.getElementById("p8").setAttribute("src","[[@{/Img/car.png}]]");
+    }else{
+        document.getElementById("p8").setAttribute("src","[[@{/Img/Park.png}]]");
+    }
+
+    if([[${belegt9}]]==true){
+        document.getElementById("p9").setAttribute("src","[[@{/Img/car.png}]]");
+    }else{
+        document.getElementById("p9").setAttribute("src","[[@{/Img/Park.png}]]");
+    }
+
+    if([[${belegt10}]]==true){
+        document.getElementById("p10").setAttribute("src","[[@{/Img/car.png}]]");
+    }else{
+        document.getElementById("p10").setAttribute("src","[[@{/Img/Park.png}]]");
+    }
+
+
+    if([[${unterKontrolle15}]]==true){
+        console.log([[${unterKontrolle15}]]);
+        document.getElementById("not1").setAttribute("src","[[@{/Img/notazsganggreen.png}]]");
+    }else{
+        document.getElementById("not1").setAttribute("src","[[@{/Img/notausgangred.png}]]");
+    }
+
+    if([[${unterKontrolle16}]]==true){
+        console.log([[${unterKontrolle16}]]);
+        document.getElementById("not2").setAttribute("src","[[@{/Img/notazsganggreen.png}]]");
+    }else{
+        document.getElementById("not2").setAttribute("src","[[@{/Img/notausgangred.png}]]");
+    }
+
+    if([[${unterKontrolle17}]]==true){
+        console.log([[${unterKontrolle17}]]);
+        document.getElementById("not3").setAttribute("src","[[@{/Img/notazsganggreen.png}]]");
+    }else{
+        document.getElementById("not3").setAttribute("src","[[@{/Img/notausgangred.png}]]");
+    }
+
+    if([[${unterKontrolle18}]]==true){
+        console.log([[${unterKontrolle18}]]);
+        document.getElementById("not4").setAttribute("src","[[@{/Img/notazsganggreen.png}]]");
+    }else{
+        document.getElementById("not4").setAttribute("src","[[@{/Img/notausgangred.png}]]");
+    }
+
+    setInterval(function (){
+        window.location="http://localhost:8080/signal";
+    },10000);
+</script>
+</html>

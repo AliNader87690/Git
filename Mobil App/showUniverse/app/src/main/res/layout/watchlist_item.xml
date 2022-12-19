@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/watchlistItemParent"
+    android:padding="10dp"
+    android:layout_margin="10dp"
+    android:layout_marginTop="20dp"
+    app:cardCornerRadius="10dp"
+    android:elevation="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageMediumWatchlist"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:id="@+id/txtNameWatchlistItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageMediumWatchlist"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="-90dp"
+            android:layout_toRightOf="@id/imageMediumWatchlist"
+            android:text="Medium Name"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtNameWatchlistItem"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/imageMediumWatchlist"
+            android:text="Status"
+            android:textStyle="bold"></TextView>
+
+        <ImageView
+            android:id="@+id/imageViewDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/imageMediumWatchlist"
+            android:layout_alignBottom="@+id/imageMediumWatchlist"
+            android:layout_marginLeft="150dp"
+            android:src="@drawable/ic_delete" />
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

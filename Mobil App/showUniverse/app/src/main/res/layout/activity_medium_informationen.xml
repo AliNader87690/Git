@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.MediumInformationenActivity">
+
+    <TextView
+        android:id="@+id/txtLogoMediumInformationen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="#C6C6C6"
+        android:padding="10dp"
+        android:text="Medium Titel"
+        android:textAlignment="center"
+        android:textColor="#02599E"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/txtErscheinungsjahr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Erscheinungsjahr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLogoMediumInformationen" />
+
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:id="@+id/videoEmbeded"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:autoPlay="false"
+
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLogoMediumInformationen" />
+
+    <TextView
+        android:id="@+id/txtBeschreibung"
+        android:layout_width="174dp"
+        android:layout_height="147dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:text="sdkjfhkahsdfhaks
+        jdhfkjhaskdhfklashdfkhasdkjfhkajh
+        shdajkhhaskdjhfkaljsdhflk
+        dsafnkjhsdlkfhalsdhfkashdflk
+        saDKJFHKLAHSDFKHAKSHDFLKAHSDKJFHASJKDF
+        ADSLJKFHAJKSHDFKLJHASLKDFHJASDF
+        ASDJKFHASDFsdfkjhskjdhfkjshdkjfhakljshdfkahdkjfhaksdhflkashdfkjhasdkö
+        jfhkjashdfklhasködfhaösdhfaösdhföahsdföahkjsdöfhaösdhf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/videoEmbeded" />
+
+
+
+    <TextView
+        android:id="@+id/txtBewertung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Bewertung"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewMediumPoster"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="@+id/imageViewMediumPoster"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewMediumPoster" />
+
+    <ImageView
+        android:id="@+id/imageViewMediumPoster"
+        android:layout_width="200dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/videoEmbeded"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/layoutZurWatchlistAdd">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/ic_watchlist_add"
+            app:layout_constraintBottom_toBottomOf="@+id/btnZurWatchlistHinzufuegen"
+            app:layout_constraintEnd_toStartOf="@+id/btnZurWatchlistHinzufuegen"
+            app:layout_constraintHorizontal_bias="0.87"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnZurWatchlistHinzufuegen"
+            app:layout_constraintVertical_bias="0.0">
+
+        </ImageView>
+
+        <Button
+            android:id="@+id/btnZurWatchlistHinzufuegen"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/teal_700"
+            android:elevation="7dp"
+            android:text="Zur Watchlist hinzufuegen"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.703"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.8" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

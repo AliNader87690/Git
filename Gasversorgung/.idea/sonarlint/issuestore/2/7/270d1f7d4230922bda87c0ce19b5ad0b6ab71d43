@@ -1,0 +1,18 @@
+
+_
+java:S1192"IDefine a constant instead of duplicating this literal "Dortmund" 4 times.(¸ÙŒ
+\
+java:S1192"FDefine a constant instead of duplicating this literal "Hagen" 4 times.(Í¯ß‘
+G
+java:S1874'",Remove this use of "Date"; it is deprecated.(úïñ´ùÿÿÿÿ
+B
+java:S1874(",Remove this use of "Date"; it is deprecated.(«”İà
+G
+java:S18745",Remove this use of "Date"; it is deprecated.(ƒµŞüøÿÿÿÿ
+G
+java:S18746",Remove this use of "Date"; it is deprecated.(ø¶Ë…üÿÿÿÿ
+B
+java:S18747",Remove this use of "Date"; it is deprecated.(úôµÖ
+B
+java:S18748",Remove this use of "Date"; it is deprecated.(Å¹ğ¼
+T	java:S106§"9Replace this use of System.out or System.err by a logger.(ÿ¾‘“úÿÿÿÿ

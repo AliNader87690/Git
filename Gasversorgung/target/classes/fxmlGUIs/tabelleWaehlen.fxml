@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="300.0" text="modul.Adresse">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="160.0" layoutY="20.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="300.0" text="modul.Anbieter">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button layoutX="160.0" layoutY="62.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="300.0" text="modul.Anbieter_Tarif">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button layoutX="160.0" layoutY="93.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="300.0" text="Anbieter_Telefon">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button layoutX="160.0" layoutY="93.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="300.0" text="modul.Privatkunde">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button layoutX="160.0" layoutY="93.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="300.0" text="modul.Geschaeftskunde">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button layoutX="160.0" layoutY="93.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="300.0" text="modul.Tarif">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button layoutX="160.0" layoutY="93.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="300.0" text="modul.Vertrag">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button layoutX="160.0" layoutY="124.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="300.0" text="modul.Zaehler">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <Label alignment="CENTER" text="Tabelle Wählen" textOverrun="CENTER_ELLIPSIS" underline="true" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+   </top>
+</BorderPane>
